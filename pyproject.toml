@@ -9,10 +9,10 @@ requires = [
 name = "kedro-dagster-example"
 dynamic = ["version", "urls"]
 authors = [
-  { name = "Guillaume Tauzin", email = "gtauzin.github@pm.me" }
+  { name = "Guillaume Tauzin", email = "gtauzin@stateful-y.io" }
 ]
 maintainers = [
-  { name = "Guillaume Tauzin", email = "gtauzin.github@pm.me" }
+  { name = "Guillaume Tauzin", email = "gtauzin@stateful-y.io" }
 ]
 description = "Kedro project for showcasing the `kedro-dagster` plugin."
 readme.content-type = "text/markdown"
