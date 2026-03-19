@@ -1,20 +1,20 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gtauzin/kedro-dagster-example/main/.github/logo_light.png">
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gtauzin/kedro-dagster-example/main/.github/logo_dark.png">
-    <img src="https://raw.githubusercontent.com/gtauzin/kedro-dagster-example/main/.github/logo_light.png" alt="Kedro-Dagster">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/stateful-y/kedro-dagster-example/main/.github/logo_light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stateful-y/kedro-dagster-example/main/.github/logo_dark.png">
+    <img src="https://raw.githubusercontent.com/stateful-y/kedro-dagster-example/main/.github/logo_light.png" alt="Kedro-Dagster">
   </picture>
 </p>
 
 ![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)
 
-This repository aims to demonstrate the [`kedro-dagster`](https://github.com/gtauzin/kedro-dagster) plugin in the context of a real‑world, deployed Kedro project. For a full user guide centered around this example repository, see the [Kedro-Dagster documentation](https://kedro-dagster.readthedocs.io/en/latest/pages/example/).
+This repository aims to demonstrate the [`kedro-dagster`](https://github.com/stateful-y/kedro-dagster) plugin in the context of a real‑world, deployed Kedro project. For a full user guide centered around this example repository, see the [Kedro-Dagster documentation](https://kedro-dagster.readthedocs.io/en/latest/pages/example/).
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gtauzin/kedro-dagster/main/docs/images/example/local_asset_graph_light.png">
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gtauzin/kedro-dagster/main/docs/images/example/local_asset_graph_dark.png">
-    <img src="https://raw.githubusercontent.com/gtauzin/kedro-dagster/main/docs/images/example/local_asset_graph_light.png" alt="Kedro-Dagster">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/stateful-y/kedro-dagster/main/docs/images/example/local_asset_graph_light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/stateful-y/kedro-dagster/main/docs/images/example/local_asset_graph_dark.png">
+    <img src="https://raw.githubusercontent.com/stateful-y/kedro-dagster/main/docs/images/example/local_asset_graph_light.png" alt="Kedro-Dagster">
   </picture>
   Asset Lineage Graph
 </p>
