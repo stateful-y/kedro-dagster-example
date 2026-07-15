@@ -37,44 +37,28 @@ schedules:
     cron_schedule: "30 2 * * *"
 
 jobs:
-  reviews_predictor_data_processing_candidate1:
+  # Job factories: a key with a '{placeholder}' marker expands into one concrete
+  # job per pipeline namespace. Here '{product}' binds to the namespaces of each
+  # pipeline (reviews_predictor, price_predictor), so the two factory keys below
+  # render four jobs: reviews_predictor__data_processing_candidate1,
+  # price_predictor__data_processing_candidate1, and the data_science pair.
+  # Preview the expansion with `kedro dagster resolve-patterns -e staging`.
+  "{product}__data_processing_candidate1":
     pipeline:
       pipeline_name: data_processing
       node_namespaces:
-      - reviews_predictor
+      - "{product}"
       tags:
       - candidate1
     loggers: ["file_logger", "console_logger"]
     executor: multiprocessing
     schedule: daily
 
-  reviews_predictor_data_science_candidate1:
+  "{product}__data_science_candidate1":
     pipeline:
       pipeline_name: data_science
       node_namespaces:
-      - reviews_predictor
-      tags:
-      - candidate1
-    loggers: ["file_logger", "console_logger"]
-    executor: sequential
-    schedule: daily
-
-  price_predictor_data_processing_candidate1:
-    pipeline:
-      pipeline_name: data_processing
-      node_namespaces:
-      - price_predictor
-      tags:
-      - candidate1
-    loggers: ["file_logger", "console_logger"]
-    executor: multiprocessing
-    schedule: daily
-
-  price_predictor_data_science_candidate1:
-    pipeline:
-      pipeline_name: data_science
-      node_namespaces:
-      - price_predictor
+      - "{product}"
       tags:
       - candidate1
     loggers: ["file_logger", "console_logger"]
