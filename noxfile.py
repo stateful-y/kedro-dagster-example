@@ -21,11 +21,11 @@ conf_root = os.path.join(os.path.dirname(__file__), "conf")
 ENVIRONMENTS = sorted([d for d in os.listdir(conf_root) if os.path.isdir(os.path.join(conf_root, d)) and d != "base"])
 
 
-# Test sessions for different Python versions and Kedro environments
-@nox.session(python=["3.13"], venv_backend="uv")
+# Test sessions for the supported Python version and each Kedro environment
+@nox.session(python="3.13", venv_backend="uv")
 @nox.parametrize("kedro_env", ENVIRONMENTS)
 def tests(session: nox.Session, kedro_env: str) -> None:
-    """Run the tests with pytest under the specified Python version and Kedro environment.
+    """Run the tests with pytest for the specified Kedro environment.
 
     This session is parametrized with `kedro_env` (one of the subfolders under `conf/`).
     It sets the `KEDRO_ENV` environment variable so code/tests pick the correct configuration.
