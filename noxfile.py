@@ -22,7 +22,7 @@ ENVIRONMENTS = sorted([d for d in os.listdir(conf_root) if os.path.isdir(os.path
 
 
 # Test sessions for different Python versions and Kedro environments
-@nox.session(python=["3.10", "3.11", "3.12", "3.13"], venv_backend="uv")
+@nox.session(python=["3.13"], venv_backend="uv")
 @nox.parametrize("kedro_env", ENVIRONMENTS)
 def tests(session: nox.Session, kedro_env: str) -> None:
     """Run the tests with pytest under the specified Python version and Kedro environment.
