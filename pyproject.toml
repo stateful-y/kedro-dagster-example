@@ -21,7 +21,7 @@ requires-python = ">=3.13, <3.14"
 dependencies = [
   "kedro==1.0.0",
   "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, optuna-studydataset]>=9.0",
-  "kedro-dagster>=0.4.0",
+  "kedro-dagster>=0.8.0",
   "kedro-mlflow>=0.14.3",
   "dagster>=1.12.0",
   # Pinning dagster versions pins dagster integrations' versions too
