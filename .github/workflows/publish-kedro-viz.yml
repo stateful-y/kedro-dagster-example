@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       KEDRO_ENV: local
+      KEDRO_LOGGING_MODULE_ALLOWLIST: kedro_dagster
 
     steps:
       - name: Checkout repository

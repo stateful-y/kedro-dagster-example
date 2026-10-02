@@ -70,6 +70,16 @@ kedro dagster init --env <KEDRO_ENV>
 
 and the `definitions.py` file along with the `conf/<KEDRO_ENV>/dagster.yml` configuration files for each Kedro environment are already provided.
 
+### Logging configuration
+
+`conf/logging.yml` uses kedro-dagster's formatter classes. Kedro only imports logging classes from allowlisted modules, so export this before running any Kedro command:
+
+```bash
+export KEDRO_LOGGING_MODULE_ALLOWLIST=kedro_dagster
+```
+
+CI and the Docker image already set it.
+
 ### Running the Pipelines
 
 You can run the Kedro pipelines using `kedro run` as usual

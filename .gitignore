@@ -195,3 +195,6 @@ mlruns
 
 # .env
 .env
+
+# MLflow tracking database
+mlflow.db

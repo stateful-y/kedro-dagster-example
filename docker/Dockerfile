@@ -76,6 +76,7 @@ ENV VIRTUAL_ENV=/usr/app/.venv \
 # ------------------------------------------------------------------
 ENV BRANCH="main"
 ENV KEDRO_ENV="prod"
+ENV KEDRO_LOGGING_MODULE_ALLOWLIST="kedro_dagster"
 
 # ------------------------------------------------------------------
 # 3️⃣3️⃣ Copy the source tree (respect .dockerignore) and the

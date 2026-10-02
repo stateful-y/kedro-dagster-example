@@ -133,3 +133,7 @@ filterwarnings = [
 
 [tool.kedro_telemetry]
 project_id = "f6961915dfa1422aad723fd0b48ff401"
+
+# TODO: drop once a kedro-dagster release ships the class-based logging formatters (stateful-y/kedro-dagster#243) and the database tracking-URI fix (stateful-y/kedro-dagster#244).
+[tool.uv.sources]
+kedro-dagster = { git = "https://github.com/stateful-y/kedro-dagster", rev = "895c87ddbf1c5862a03c2029726fef0d54fb2dd3" }

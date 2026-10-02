@@ -19,6 +19,7 @@ env:
   POSTGRES_HOST: localhost
   POSTGRES_PORT: "5432"
   PYTHON_VERSION: "3.13"
+  KEDRO_LOGGING_MODULE_ALLOWLIST: kedro_dagster
 
 jobs:
   # Cross-platform checks without DB service (services are not supported on macOS/Windows runners)
