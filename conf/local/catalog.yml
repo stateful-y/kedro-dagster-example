@@ -55,7 +55,8 @@
 "{namespace}.{variant}.regressor":
   type: kedro_mlflow.io.models.MlflowModelTrackingDataset
   flavor: mlflow.sklearn
-  artifact_path: "{namespace}/{variant}/regressor"
+  save_args:
+    name: "{namespace}_{variant}_regressor"
   metadata:
     description: "Regressor trained for {variant} model for {namespace}."
 

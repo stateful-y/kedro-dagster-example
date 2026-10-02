@@ -21,7 +21,8 @@ def register_pipelines() -> dict[str, Pipeline]:
     if KEDRO_ENV in ["local", "dev"]:
         env_pipeline_names.append("model_tuning")
 
-    pipelines = {pipeline_name: pipelines[pipeline_name] for pipeline_name in env_pipeline_names}
+    # Kedro >= 1.7 only discovers the pipelines requested by the run, so skip the absent ones
+    pipelines = {name: pipelines[name] for name in env_pipeline_names if name in pipelines}
 
     # https://github.com/kedro-org/kedro/issues/2526
     pipelines["__default__"] = sum(pipelines.values(), start=Pipeline([]))

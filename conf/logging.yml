@@ -1,5 +1,6 @@
 # To enable this custom logging configuration, set KEDRO_LOGGING_CONFIG to the path of this file.
 # More information available at https://docs.kedro.org/en/stable/develop/logging/
+# The kedro-dagster formatter classes require KEDRO_LOGGING_MODULE_ALLOWLIST=kedro_dagster.
 version: 1
 
 disable_existing_loggers: False
@@ -9,13 +10,13 @@ formatters:
     format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
   colored:
-    "()": kedro_dagster.dagster_colored_formatter
+    class: kedro_dagster.logging.DagsterColoredFormatter
 
   json:
-    "()": kedro_dagster.dagster_json_formatter
+    class: kedro_dagster.logging.DagsterJsonFormatter
 
   rich:
-    "()": kedro_dagster.dagster_rich_formatter
+    class: kedro_dagster.logging.DagsterRichFormatter
 
 handlers:
   console:
