@@ -1734,8 +1734,8 @@ wheels = [
 
 [[package]]
 name = "kedro-dagster"
-version = "0.8.1.dev80+g9ead9f66d"
-source = { git = "https://github.com/stateful-y/kedro-dagster?rev=9ead9f66d1fc9f9e6f76ada15949d05e0a3c957c#9ead9f66d1fc9f9e6f76ada15949d05e0a3c957c" }
+version = "0.8.1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cachetools" },
     { name = "dagster" },
@@ -1744,6 +1744,10 @@ dependencies = [
     { name = "kedro" },
     { name = "kedro-datasets" },
     { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b9/03/2053a19ffb179ceca8b52005d2621ca892436486a9227f37ae97738de284/kedro_dagster-0.8.1.tar.gz", hash = "sha256:552679cc4da54371aa09ea76382b08df279c8db89204660ce9b9e17f9b71261e", size = 4100377, upload-time = "2026-10-02T18:24:59.072Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b5/38/84e12d0591d8257ff2955a8d172d805fc6f9c44fe24a89e85e24efeee9e2/kedro_dagster-0.8.1-py3-none-any.whl", hash = "sha256:ead34bc51afcbbbf0403fcc2eb4e166c91155c17113251465646d7c53d3ece62", size = 78349, upload-time = "2026-10-02T18:24:57.393Z" },
 ]
 
 [[package]]
@@ -1811,7 +1815,7 @@ requires-dist = [
     { name = "dagster-cloud", marker = "extra == 'plus'" },
     { name = "dagster-mlflow" },
     { name = "kedro", specifier = ">=1.3,<2" },
-    { name = "kedro-dagster", git = "https://github.com/stateful-y/kedro-dagster?rev=9ead9f66d1fc9f9e6f76ada15949d05e0a3c957c" },
+    { name = "kedro-dagster", specifier = ">=0.8.1" },
     { name = "kedro-datasets", extras = ["optuna-studydataset", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset"], specifier = ">=9.0" },
     { name = "kedro-mlflow", specifier = ">=0.14.3" },
     { name = "mlflow", specifier = ">=2.20" },
