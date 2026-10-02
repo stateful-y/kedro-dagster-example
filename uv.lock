@@ -1734,8 +1734,8 @@ wheels = [
 
 [[package]]
 name = "kedro-dagster"
-version = "0.8.1.dev80+g895c87ddb"
-source = { git = "https://github.com/stateful-y/kedro-dagster?rev=895c87ddbf1c5862a03c2029726fef0d54fb2dd3#895c87ddbf1c5862a03c2029726fef0d54fb2dd3" }
+version = "0.8.1.dev80+g9ead9f66d"
+source = { git = "https://github.com/stateful-y/kedro-dagster?rev=9ead9f66d1fc9f9e6f76ada15949d05e0a3c957c#9ead9f66d1fc9f9e6f76ada15949d05e0a3c957c" }
 dependencies = [
     { name = "cachetools" },
     { name = "dagster" },
@@ -1811,7 +1811,7 @@ requires-dist = [
     { name = "dagster-cloud", marker = "extra == 'plus'" },
     { name = "dagster-mlflow" },
     { name = "kedro", specifier = ">=1.3,<2" },
-    { name = "kedro-dagster", git = "https://github.com/stateful-y/kedro-dagster?rev=895c87ddbf1c5862a03c2029726fef0d54fb2dd3" },
+    { name = "kedro-dagster", git = "https://github.com/stateful-y/kedro-dagster?rev=9ead9f66d1fc9f9e6f76ada15949d05e0a3c957c" },
     { name = "kedro-datasets", extras = ["optuna-studydataset", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset"], specifier = ">=9.0" },
     { name = "kedro-mlflow", specifier = ">=0.14.3" },
     { name = "mlflow", specifier = ">=2.20" },
