@@ -1,7 +1,7 @@
 ########################
 # 1️⃣ Base image (Alpine)
 ########################
-FROM alpine:3.13 AS base
+FROM alpine:3.24 AS base
 
 # ------------------------------------------------------------------
 # 1️⃣1️⃣ Copy the `uv` binary from the official image.
