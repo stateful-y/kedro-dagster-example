@@ -31,6 +31,8 @@ dependencies = [
   "optuna>=4.2",
   "optuna-integration>=4.2",
   "psycopg2-binary>=2.9",
+  # SQLAlchemy >= 2.1 maps `postgresql://` to psycopg 3 instead of psycopg2
+  "psycopg[binary]>=3.2",
 ]
 
 [project.optional-dependencies]
