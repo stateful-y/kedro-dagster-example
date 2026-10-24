@@ -1,0 +1,44 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly, so a newly-disclosed query pattern still runs against unchanged code.
+    - cron: "27 3 * * 1"
+
+# Least-privilege default: read-only token; the analyze job widens as needed.
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze (Python)
+    runs-on: ubuntu-latest
+    # A job-level block replaces the workflow-level one, so every scope the job needs is
+    # listed. The two reads are invisible on a public repo, where checkout works
+    # anonymously, and fatal while a repo is still private: without `contents: read`
+    # checkout fails with "repository not found", and without `actions: read` the
+    # analyze step cannot read the run it belongs to.
+    permissions:
+      contents: read
+      actions: read
+      # Required to upload CodeQL results to the Security tab.
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4
+        with:
+          languages: python
+          # Scopes the scan to shipped code. Without it the default suite reads test
+          # assertions and example notebooks as production code paths; see the config
+          # file for which queries that trips and why excluding beats dismissing.
+          config-file: ./.github/codeql/codeql-config.yml
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4
