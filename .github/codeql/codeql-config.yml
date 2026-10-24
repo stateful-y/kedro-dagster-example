@@ -1,0 +1,8 @@
+# CodeQL scans the project code, not the harness or the notebooks around it. The default
+# suite reads test assertions and notebook cells as production code paths and reports
+# false positives on them; excluding the directories is the fix that stays fixed.
+name: "kedro_dagster_example (source only)"
+
+paths-ignore:
+  - tests
+  - notebooks
