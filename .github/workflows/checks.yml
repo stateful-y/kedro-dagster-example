@@ -122,3 +122,22 @@ jobs:
         env:
           DIFF_AGAINST: HEAD
           PYTEST_XDIST_AUTO_NUM_WORKERS: 0
+
+  # One stable name for the org ruleset to require. The job names above carry matrix
+  # values, so none of them can be named in a ruleset directly. This roll-up depends on
+  # every test job and passes only when they all succeeded.
+  ci-passed:
+    name: CI passed
+    if: always()
+    needs:
+      - ckeck
+      - checks_postgres
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any required job did not pass
+        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        run: |
+          echo "::error::a required CI job failed or was cancelled"
+          exit 1
+      - name: All required jobs passed
+        run: echo "All required CI jobs passed."
